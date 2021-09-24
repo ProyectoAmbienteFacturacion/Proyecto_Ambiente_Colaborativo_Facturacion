@@ -173,7 +173,7 @@ namespace Factura
            clsFactura.CreaTicket.LineasGuion();
             foreach (DataGridViewRow r in dgvLista.Rows)
             {
-                // PROD                     //PrECIO                                    CANT                         TOTAL
+                // PROD                     //PRECIO                                    CANT                         TOTAL
                 Ticket1.AgregaArticulo(r.Cells[1].Value.ToString(), double.Parse(r.Cells[2].Value.ToString()), int.Parse(r.Cells[3].Value.ToString()), double.Parse(r.Cells[4].Value.ToString())); //imprime una linea de descripcion
             }
 

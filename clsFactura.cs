@@ -19,7 +19,7 @@ namespace Factura
             int cort;
             public static string LineasGuion()
             {
-                string LineaGuion = "----------------------------------------";   // Agrega lineas separadoras -
+                string LineaGuion = "----------------------------------------";   //Agrega lineas separadoras -
 
                 return line.AppendLine(LineaGuion).ToString();
             }
@@ -27,7 +27,7 @@ namespace Factura
 
             public static void EncabezadoVenta()
             {
-                string LineEncavesado = " Prod          Cant   Precio    Total";   // Agrega lineas de  encabezados
+                string LineEncavesado = " Prod          Cant   Precio    Total";   //Agrega lineas de  encabezados
                 line.AppendLine(LineEncavesado);
             }
             public void TextoIzquierda(string par1)                          // Agrega texto a la izquierda
@@ -52,11 +52,11 @@ namespace Factura
                     parte1 = par1.Remove(40, cort);           // Si es mayor que 40 caracteres, lo corta
                 }
                 else { parte1 = par1; }                      // **********
-                max = 40 - par1.Length;                     // Obtiene la cantidad de espacios para llegar a 40
+                max = 40 - par1.Length;                     //Obtiene la cantidad de espacios para llegar a 40
                 for (int i = 0; i < max; i++)
                 {
-                    ticket += " ";                          // Agrega espacios para alinear a la derecha
-                }
+                    ticket += " ";                          //Agrega espacios para alinear a la derecha
+                
                 line.AppendLine(ticket += parte1 + "\n");                //Agrega el texto
 
             }
@@ -135,7 +135,7 @@ namespace Factura
                     if (Articulo.Length > 40)                                 // **********
                     {
                         //cort = max - 16;
-                        //parte1 = Articulo.Remove(16, cort);          // Corta a 16 la descripcion del articulo
+                        //parte1 = Articulo.Remove(16, cort);          //Corta a 16 la descripcion del articulo
                         nroEspacios = (3 - cant.ToString().Length);
                         espacios = "";
                         for (int i = 0; i < nroEspacios; i++)
