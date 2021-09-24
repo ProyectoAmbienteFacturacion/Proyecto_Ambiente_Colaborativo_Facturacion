@@ -55,7 +55,7 @@ namespace Factura
                 max = 40 - par1.Length;                     // Obtiene la cantidad de espacios para llegar a 40
                 for (int i = 0; i < max; i++)
                 {
-                    ticket += " ";                          // agrega espacios para alinear a la derecha
+                    ticket += " ";                          // Agrega espacios para alinear a la derecha
                 }
                 line.AppendLine(ticket += parte1 + "\n");                //Agrega el texto
 
