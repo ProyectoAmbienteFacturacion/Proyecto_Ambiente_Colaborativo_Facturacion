@@ -49,13 +49,13 @@ namespace Factura
                 if (max > 40)                                 // **********
                 {
                     cort = max - 40;
-                    parte1 = par1.Remove(40, cort);           // si es mayor que 40 caracteres, lo corta
+                    parte1 = par1.Remove(40, cort);           // Si es mayor que 40 caracteres, lo corta
                 }
                 else { parte1 = par1; }                      // **********
                 max = 40 - par1.Length;                     // Obtiene la cantidad de espacios para llegar a 40
                 for (int i = 0; i < max; i++)
                 {
-                    ticket += " ";                          // agrega espacios para alinear a la derecha
+                    ticket += " ";                          // Agrega espacios para alinear a la derecha
                 }
                 line.AppendLine(ticket += parte1 + "\n");                //Agrega el texto
 
@@ -199,7 +199,7 @@ namespace Factura
                         }
                         elementos += espacios + cant.ToString();
 
-                        // colocamos el precio a la derecha
+                        //Colocamos el precio a la derecha
                         nroEspacios = (10 - precio.ToString().Length);
                         espacios = "";
 
