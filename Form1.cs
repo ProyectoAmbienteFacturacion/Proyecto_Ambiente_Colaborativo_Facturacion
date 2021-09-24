@@ -163,7 +163,7 @@ namespace Factura
             Ticket1.TextoCentro("**********************************");
             Ticket1.TextoIzquierda("");
             Ticket1.TextoCentro("Factura de Venta"); //imprime una linea de descripcion
-            Ticket1.TextoIzquierda("No Fac: 0120102");
+            Ticket1.TextoIzquierda("No Fac: 0000001");
             Ticket1.TextoIzquierda("Fecha: " + DateTime.Now.ToShortDateString() + " Hora:" + DateTime.Now.ToShortTimeString());
             Ticket1.TextoIzquierda("Le Atendio: KC&BC&MY");
             Ticket1.TextoIzquierda("");
@@ -198,6 +198,7 @@ namespace Factura
             Ticket1.ImprimirTiket(impresora);
 
             MessageBox.Show("Gracias por preferirnos");
+            MessageBox.Show("Vuelva Pronto");
 
             this.Close();
         }
