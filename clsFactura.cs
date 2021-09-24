@@ -49,7 +49,7 @@ namespace Factura
                 if (max > 40)                                 // **********
                 {
                     cort = max - 40;
-                    parte1 = par1.Remove(40, cort);           // si es mayor que 40 caracteres, lo corta
+                    parte1 = par1.Remove(40, cort);           // Si es mayor que 40 caracteres, lo corta
                 }
                 else { parte1 = par1; }                      // **********
                 max = 40 - par1.Length;                     // Obtiene la cantidad de espacios para llegar a 40
