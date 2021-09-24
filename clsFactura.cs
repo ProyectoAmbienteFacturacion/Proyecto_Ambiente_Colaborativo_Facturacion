@@ -199,7 +199,7 @@ namespace Factura
                         }
                         elementos += espacios + cant.ToString();
 
-                        // colocamos el precio a la derecha
+                        //Colocamos el precio a la derecha
                         nroEspacios = (10 - precio.ToString().Length);
                         espacios = "";
 
