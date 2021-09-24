@@ -159,10 +159,10 @@ namespace Factura
         {
             clsFactura.CreaTicket Ticket1 = new clsFactura.CreaTicket();
 
-            Ticket1.TextoCentro("Empresa de Ropa "); //imprime una linea de descripcion
+            Ticket1.TextoCentro("Empresa de Ropa "); //Imprime una linea de descripcion
             Ticket1.TextoCentro("**********************************");
             Ticket1.TextoIzquierda("");
-            Ticket1.TextoCentro("Factura de Venta"); //imprime una linea de descripcion
+            Ticket1.TextoCentro("Factura de Venta"); //Imprime una linea de descripcion
             Ticket1.TextoIzquierda("No Fac: 0000001");
             Ticket1.TextoIzquierda("Fecha: " + DateTime.Now.ToShortDateString() + " Hora:" + DateTime.Now.ToShortTimeString());
             Ticket1.TextoIzquierda("Le Atendio: KC&BC&MY");
@@ -180,7 +180,7 @@ namespace Factura
 
             clsFactura.CreaTicket.LineasGuion();
             Ticket1.TextoIzquierda(" ");
-            Ticket1.AgregaTotales("Total", double.Parse(lblTotatlPagar.Text)); // imprime linea con total
+            Ticket1.AgregaTotales("Total", double.Parse(lblTotatlPagar.Text)); // Imprime linea con total
             Ticket1.TextoIzquierda(" ");
             Ticket1.AgregaTotales("Efectivo Entregado: ", double.Parse(txtEfectivo.Text));
             Ticket1.AgregaTotales("Efectivo Devuelto: ", double.Parse(lblDevolucion.Text));

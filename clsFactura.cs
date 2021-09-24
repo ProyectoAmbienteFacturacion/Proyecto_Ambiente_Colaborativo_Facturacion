@@ -19,7 +19,7 @@ namespace Factura
             int cort;
             public static string LineasGuion()
             {
-                string LineaGuion = "----------------------------------------";   // agrega lineas separadoras -
+                string LineaGuion = "----------------------------------------";   // Agrega lineas separadoras -
 
                 return line.AppendLine(LineaGuion).ToString();
             }
@@ -27,16 +27,16 @@ namespace Factura
 
             public static void EncabezadoVenta()
             {
-                string LineEncavesado = " Prod          Cant   Precio    Total";   // agrega lineas de  encabezados
+                string LineEncavesado = " Prod          Cant   Precio    Total";   // Agrega lineas de  encabezados
                 line.AppendLine(LineEncavesado);
             }
-            public void TextoIzquierda(string par1)                          // agrega texto a la izquierda
+            public void TextoIzquierda(string par1)                          // Agrega texto a la izquierda
             {
                 max = par1.Length;
                 if (max > 40)                                 // **********
                 {
                     cort = max - 40;
-                    parte1 = par1.Remove(40, cort);        // si es mayor que 40 caracteres, lo corta
+                    parte1 = par1.Remove(40, cort);        // Si es mayor que 40 caracteres, lo corta
                 }
                 else { parte1 = par1; }                      // **********
                 line.AppendLine(ticket = parte1);
@@ -52,7 +52,7 @@ namespace Factura
                     parte1 = par1.Remove(40, cort);           // si es mayor que 40 caracteres, lo corta
                 }
                 else { parte1 = par1; }                      // **********
-                max = 40 - par1.Length;                     // obtiene la cantidad de espacios para llegar a 40
+                max = 40 - par1.Length;                     // Obtiene la cantidad de espacios para llegar a 40
                 for (int i = 0; i < max; i++)
                 {
                     ticket += " ";                          // agrega espacios para alinear a la derecha
@@ -67,10 +67,10 @@ namespace Factura
                 if (max > 40)                                 // **********
                 {
                     cort = max - 40;
-                    parte1 = par1.Remove(40, cort);          // si es mayor que 40 caracteres, lo corta
+                    parte1 = par1.Remove(40, cort);          // Si es mayor que 40 caracteres, lo corta
                 }
                 else { parte1 = par1; }                      // **********
-                max = (int)(40 - parte1.Length) / 2;         // saca la cantidad de espacios libres y divide entre dos
+                max = (int)(40 - parte1.Length) / 2;         // Saca la cantidad de espacios libres y divide entre dos
                 for (int i = 0; i < max; i++)                // **********
                 {
                     ticket += " ";                           // Agrega espacios antes del texto a centrar
@@ -84,15 +84,15 @@ namespace Factura
                 if (max > 18)                                 // **********
                 {
                     cort = max - 18;
-                    parte1 = par1.Remove(18, cort);          // si par1 es mayor que 18 lo corta
+                    parte1 = par1.Remove(18, cort);          // Si par1 es mayor que 18 lo corta
                 }
                 else { parte1 = par1; }                      // **********
-                ticket = parte1;                             // agrega el primer parametro
+                ticket = parte1;                             // Agrega el primer parametro
                 max = par2.Length;
                 if (max > 18)                                 // **********
                 {
                     cort = max - 18;
-                    parte2 = par2.Remove(18, cort);          // si par2 es mayor que 18 lo corta
+                    parte2 = par2.Remove(18, cort);          // Si par2 es mayor que 18 lo corta
                 }
                 else { parte2 = par2; }
                 max = 40 - (parte1.Length + parte2.Length);
@@ -100,7 +100,7 @@ namespace Factura
                 {
                     ticket += " ";                            // Agrega espacios para poner par2 al final
                 }                                             // **********
-                line.AppendLine(ticket += parte2 + "\n");                   // agrega el segundo parametro al final
+                line.AppendLine(ticket += parte2 + "\n");                   // Agrega el segundo parametro al final
 
             }
             public void AgregaTotales(string par1, double total)
@@ -109,7 +109,7 @@ namespace Factura
                 if (max > 25)                                 // **********
                 {
                     cort = max - 25;
-                    parte1 = par1.Remove(25, cort);          // si es mayor que 25 lo corta
+                    parte1 = par1.Remove(25, cort);          // Si es mayor que 25 lo corta
                 }
                 else { parte1 = par1; }                      // **********
                 ticket = parte1;
@@ -135,7 +135,7 @@ namespace Factura
                     if (Articulo.Length > 40)                                 // **********
                     {
                         //cort = max - 16;
-                        //parte1 = Articulo.Remove(16, cort);          // corta a 16 la descripcion del articulo
+                        //parte1 = Articulo.Remove(16, cort);          // Corta a 16 la descripcion del articulo
                         nroEspacios = (3 - cant.ToString().Length);
                         espacios = "";
                         for (int i = 0; i < nroEspacios; i++)
@@ -154,7 +154,7 @@ namespace Factura
                         }
                         elementos += espacios + precio.ToString();
 
-                        //colocar el subtotal a la dercha
+                        //Colocar el subtotal a la dercha
                         nroEspacios = (11 - subtotal.ToString().Length);
                         espacios = "";
 
@@ -164,7 +164,7 @@ namespace Factura
                         }
                         elementos += espacios + subtotal.ToString();
 
-                        int CaracterActual = 0;// indica en que caracter se quedo
+                        int CaracterActual = 0;// Indica en que caracter se quedo
                         for (int Longtext = Articulo.Length; Longtext > 16; Longtext++)
                         {
                             if (bandera == false)
@@ -209,7 +209,7 @@ namespace Factura
                         }
                         elementos += espacios + precio.ToString();
 
-                        //colocar el subtotal a la dercha
+                        //Colocar el subtotal a la dercha
                         nroEspacios = (11 - subtotal.ToString().Length);
                         espacios = "";
 
