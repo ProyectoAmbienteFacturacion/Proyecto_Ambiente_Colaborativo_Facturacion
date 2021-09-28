@@ -81,10 +81,10 @@ namespace Factura
                 case 8: lblPrecio.Text = "040"; break;
                 case 9: lblPrecio.Text = "002"; break;
                 case 10: lblPrecio.Text = "005"; break;
-                case 11: lblPrecio.Text = "003"; break;
+                case 11: lblPrecio.Text = "005"; break;
                 case 12: lblPrecio.Text = "010"; break;
                 case 13: lblPrecio.Text = "050"; break;
-                case 14: lblPrecio.Text = "030"; break;
+                case 14: lblPrecio.Text = "040"; break;
                 default: lblPrecio.Text = "060";break;
             }
         }
