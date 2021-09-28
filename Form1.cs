@@ -180,7 +180,7 @@ namespace Factura
 
             clsFactura.CreaTicket.LineasGuion();
             Ticket1.TextoIzquierda(" ");
-            Ticket1.AgregaTotales("Total", double.Parse(lblTotatlPagar.Text)); // Imprime linea con total
+            Ticket1.AgregaTotales("Total: ", double.Parse(lblTotatlPagar.Text)); // Imprime linea con total
             Ticket1.TextoIzquierda(" ");
             Ticket1.AgregaTotales("Efectivo Entregado: ", double.Parse(txtEfectivo.Text));
             Ticket1.AgregaTotales("Efectivo Devuelto: ", double.Parse(lblDevolucion.Text));
