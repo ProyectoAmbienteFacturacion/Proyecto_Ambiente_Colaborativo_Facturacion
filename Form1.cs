@@ -164,7 +164,7 @@ namespace Factura
             Ticket1.TextoIzquierda("");
             Ticket1.TextoCentro("Factura de Venta"); //Imprime una linea de descripcion
             Ticket1.TextoIzquierda("No Fac: 0000001");
-            Ticket1.TextoIzquierda("Fecha: " + DateTime.Now.ToShortDateString() + " Hora:" + DateTime.Now.ToShortTimeString());
+            Ticket1.TextoIzquierda("Fecha: " + DateTime.Now.ToShortDateString() + " Hora: " + DateTime.Now.ToShortTimeString());
             Ticket1.TextoIzquierda("Le Atendio: KC&BC&MY");
             Ticket1.TextoIzquierda("");
             clsFactura.CreaTicket.LineasGuion();
