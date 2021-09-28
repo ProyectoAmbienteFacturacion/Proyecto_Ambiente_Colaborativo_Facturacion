@@ -317,7 +317,7 @@ namespace Factura
             {
                 IntPtr pBytes;
                 Int32 dwCount;
-                // How many characters are in the string?
+                // Cuantos caracteres tiene la cadena?
                 dwCount = szString.Length;
                 // Assume that the printer is expecting ANSI text, and then convert
                 // the string to ANSI text.
