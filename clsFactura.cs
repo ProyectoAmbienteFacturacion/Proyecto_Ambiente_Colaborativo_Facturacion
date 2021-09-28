@@ -240,7 +240,7 @@ namespace Factura
         #region Clase para enviar a imprsora texto plano
         public class RawPrinterHelper
         {
-            // Structure and API declarions:
+            // Estructura y declaraciones de API:
             [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
             public class DOCINFOA
             {
@@ -273,30 +273,30 @@ namespace Factura
             public static extern bool WritePrinter(IntPtr hPrinter, IntPtr pBytes, Int32 dwCount, out Int32 dwWritten);
 
             // SendBytesToPrinter()
-            // When the function is given a printer name and an unmanaged array
-            // of bytes, the function sends those bytes to the print queue.
-            // Returns true on success, false on failure.
+            // Cuando la función recibe un nombre de impresora y una matriz no administrada
+            // de bytes, la función envía esos bytes a la cola de impresión.
+            // Devuelve verdadero en caso de éxito, falso en caso de error.
             public static bool SendBytesToPrinter(string szPrinterName, IntPtr pBytes, Int32 dwCount)
             {
                 Int32 dwError = 0, dwWritten = 0;
                 IntPtr hPrinter = new IntPtr(0);
                 DOCINFOA di = new DOCINFOA();
-                bool bSuccess = false; // Assume failure unless you specifically succeed.
+                bool bSuccess = false; // Asume el fracaso a menos que tengas éxito específicamente.
 
                 di.pDocName = "My C#.NET RAW Document";
                 di.pDataType = "RAW";
-                // di.pOutputFile = @"C:\Users\Roland\Documents\Visual Studio 2015\Projects\pjtVentas\Ventas";
+                // di.pOutputFile = @"C:\Users\Roland\Documents\Visual Studio 2017\Projects\pjtVentas\Ventas";
 
-                // Open the printer.
+                // Abre la impresora.
                 if (OpenPrinter(szPrinterName.Normalize(), out hPrinter, IntPtr.Zero))
                 {
-                    // Start a document.
+                    // Iniciar un documento.
                     if (StartDocPrinter(hPrinter, 1, di))
                     {
-                        // Start a page.
+                        // Iniciar una página.
                         if (StartPagePrinter(hPrinter))
                         {
-                            // Write your bytes.
+                            // Escribe tus bytes.
                             bSuccess = WritePrinter(hPrinter, pBytes, dwCount, out dwWritten);
                             EndPagePrinter(hPrinter);
                         }
@@ -304,8 +304,8 @@ namespace Factura
                     }
                     ClosePrinter(hPrinter);
                 }
-                // If you did not succeed, GetLastError may give more information
-                // about why not.
+                // Si no tuvo éxito, GetLastError puede brindar más información
+                // sobre por qué no.
                 if (bSuccess == false)
                 {
                     dwError = Marshal.GetLastWin32Error();
@@ -319,10 +319,10 @@ namespace Factura
                 Int32 dwCount;
                 // Cuantos caracteres tiene la cadena?
                 dwCount = szString.Length;
-                // Assume that the printer is expecting ANSI text, and then convert
-                // the string to ANSI text.
+                // Suponga que la impresora espera texto ANSI y luego convierta
+                // la cadena al texto ANSI.
                 pBytes = Marshal.StringToCoTaskMemAnsi(szString);
-                // Send the converted ANSI string to the printer.
+                // Envía la cadena ANSI convertida a la impresora.
                 SendBytesToPrinter(szPrinterName, pBytes, dwCount);
                 Marshal.FreeCoTaskMem(pBytes);
                 return true;
